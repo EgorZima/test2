@@ -1,9 +1,9 @@
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { TopTwentyComponent } from './components/top-twenty/top-twenty.component';       
+import { TopTwentyComponent } from './components/top-twenty/top-twenty.component';
 import { DecadesComponent } from './components/decades/decades.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';       
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
     imports: [RouterModule.forRoot([

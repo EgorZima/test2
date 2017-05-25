@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { Injectable } from '@angular/core';
+import { Http, Response} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-@Injectable() 
-export class IMDBService {           
-    constructor( private http: Http) {}
+@Injectable()
+export class IMDBService {
+    public url: string  = 'http://www.myapifilms.com/imdb/top';
 
-    url = 'http://www.myapifilms.com/imdb/top';
+    private constructor( private http: Http) {}
 
-    public getTopList() {
-        return this.http.get(this.url)
-                        .map(res => res.json())
+    public getTopList(): Observable<Movie[]> {
+        return this.http.get(this.url).map((res: Response) => res.json());
     }
- }
+  }

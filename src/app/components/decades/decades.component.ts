@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './decades.component.html'
 })
 export class DecadesComponent {
-  
 }

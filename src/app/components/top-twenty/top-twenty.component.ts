@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IMDBService } from "../../services/IMDB.service"
+import { IMDBService } from '../../services/IMDB.service';
 
 @Component({
   selector: 'top-twenty',
   templateUrl: './top-twenty.component.html'
 })
 export class TopTwentyComponent {
-      constructor( private imdbService: IMDBService){}
-      
-      topList;
+      public topList: Movie[] = [];
 
-      ngOnInit() {
+      private constructor( private imdbService: IMDBService) {}
+
+      public ngOnInit(): void {
         this.imdbService.getTopList().subscribe(
-          res => this.topList = res
+          (res: Movie[]) => this.topList = res
         );
 
-        
+
       }
 }

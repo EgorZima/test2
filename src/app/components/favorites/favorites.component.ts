@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './favorites.component.html'
 })
 export class FavoritesComponent {
-  
 }
