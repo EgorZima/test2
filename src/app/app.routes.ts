@@ -7,24 +7,10 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
     imports: [RouterModule.forRoot([
-        {
-            path: '',
-            redirectTo: 'top',
-            pathMatch: 'full'
-        },
-        {
-            path: 'top',
-            component: TopTwentyComponent
-        },
-        {
-            path: 'decades',
-            component: DecadesComponent
-        },
-        {
-            path: 'favorites',
-            component: FavoritesComponent
-        }
-
+        { path: '', redirectTo: 'top', pathMatch: 'full' },
+        { path: 'top', component: TopTwentyComponent },
+        { path: 'dacades', component: DecadesComponent },
+        { path: 'favorites', component: FavoritesComponent }
     ])],
     exports: [RouterModule]
 })

@@ -1,8 +1,9 @@
 type Movie =  {
-  id: number,
-  title: string,
-  description: string,
-  photo: string,
-  director: string,
-  date: number
+  urlPoster: string,
+  urlIMDB: string,
+  year: number,
+  rating: number,
+  genres: void,
+  countries: object,
+  directors: object
 }

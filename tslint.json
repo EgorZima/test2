@@ -1,15 +1,6 @@
-{
+{ no-console
   "jsRules": {
     "class-name": true,
-    "no-console": [
-      true,
-      "log",
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
     "no-debugger": true,
     "no-arg": true,
     "no-invalid-this": true,
@@ -156,15 +147,6 @@
     ],
 
     "class-name": true,
-    "no-console": [
-      true,
-      "log",
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
     "no-debugger": true,
     "no-arg": true,
     "no-invalid-this": true,

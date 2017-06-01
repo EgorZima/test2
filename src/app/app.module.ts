@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
 
 import { IMDBService } from './services/IMDB.service';
+import { FilmService } from './services/film.service';
 import { AppRoutingModule } from './app.routes';
 
 import { AppComponent } from './app.component';
+import { ModalWindowComponent } from './components/modal-window/modal.window.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DecadesComponent } from './components/decades/decades.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { TopTwentyComponent } from './components/top-twenty/top-twenty.component';
-
 
 @NgModule({
   declarations: [
@@ -20,15 +23,22 @@ import { TopTwentyComponent } from './components/top-twenty/top-twenty.component
     NavbarComponent,
     DecadesComponent,
     FavoritesComponent,
-    TopTwentyComponent
+    TopTwentyComponent,
+    ModalWindowComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    JsonpModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
-  providers: [IMDBService],
-  bootstrap: [AppComponent]
+  providers: [IMDBService, FilmService],
+  bootstrap: [AppComponent],
+  entryComponents: [ModalWindowComponent], 
 })
 export class AppModule { }
+
+

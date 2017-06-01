@@ -1,0 +1,15 @@
+.navbar-header .navbar-brand {
+    font-size: 30px;
+    color: #000;
+    padding: 8px 12px;
+}
+nav a {
+    font-size: 14px;
+    color: #d4d4d4;
+    transition: 0.2s;
+    padding-top: 12px;
+}
+nav a.active {
+    color: #000;
+    font-size: 18px;
+}
