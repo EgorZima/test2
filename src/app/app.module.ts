@@ -3,8 +3,8 @@ import { NgModule, Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IMDBService } from './services/IMDB.service';
 import { FilmService } from './services/film.service';
@@ -32,8 +32,8 @@ import { TopTwentyComponent } from './components/top-twenty/top-twenty.component
     HttpModule,
     JsonpModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [IMDBService, FilmService],
   bootstrap: [AppComponent],

@@ -5,5 +5,6 @@ type Movie =  {
   rating: number,
   genres: void,
   countries: object,
-  directors: object
+  directors: object,
+  title: string
 }

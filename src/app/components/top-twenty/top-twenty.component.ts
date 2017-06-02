@@ -7,33 +7,46 @@ import { ModalWindowComponent } from '..//modal-window/modal.window.component';
 @Component({
   selector: 'top-twenty',
   templateUrl: './top-twenty.component.html',
-  styleUrls: ['top-twenty.component.css'],
+  styleUrls: ['top-twenty.component.css'] 
 })
 export class TopTwentyComponent {
       public topList = [];
-
       public constructor( private imdbService: IMDBService,
                           private filmService: FilmService,
                           private dialog: MdDialog) {}
       
       public ngOnInit(): void {
-        this.imdbService.getTopList().subscribe(
-          (res: any) =>  { 
-            this.topList = res.data.movies;
-            
-            for (let i = 0; i < this.topList.length; i++) {
-              this.imdbService.getYotubeId(this.topList[i].title).subscribe(
-                (res: any) => this.topList[i].youtubeID = (res.items[0].id.videoId)  
-              )
-              this.topList[i].favorite = false;
+        if(!localStorage['topList']) { 
+          this.imdbService.getTopList().subscribe(
+            (res: any) =>  { 
+              let top = res.data.movies;
+              
+              for (let i = 0; i < top.length; i++) {
+                this.imdbService.getYotubeId(top[i].title).subscribe(
+                  (res: any) => top[i].youtubeID = (res.items[0].id.videoId)  
+                )
+                top[i].favorite = false;
+                this.topList.push(top[i])
+              }
+              localStorage['topList'] = JSON.stringify(top);
             }
-          }
-        )  
+          )
+          return
+        } 
+        this.topList = JSON.parse(localStorage.getItem('topList'));
       }
-      
+
+      public openDialog(film, e): void {
+        e.preventDefault();
+        
+        this.filmService.setCurrentFilm(film);
+        let dialogRef = this.dialog.open(ModalWindowComponent);
+      } 
+
       public addToFavorites(film, e): void {
-        film.favorite = !film.favorite;
-        localStorage.setItem('Favorites', JSON.stringify(film));
+        let index = this.topList.findIndex(i => i.title === film.title);
+        this.topList[index].favorite = !this.topList[index].favorite;
+        this.updateField('topList', this.topList);
         
         if(film.favorite) {
           e.target.className += ' favorited';
@@ -42,11 +55,9 @@ export class TopTwentyComponent {
         e.target.classList.remove('favorited');
       }
      
-      public openDialog(film, e): void {
-        e.preventDefault();
-        
-        this.filmService.setCurrentFilm(film);
-        let dialogRef = this.dialog.open(ModalWindowComponent);
-      }     
+      public updateField(fieldId, data): void  {
+       	localStorage[fieldId] = JSON.stringify(data);
+      }
+
 }
 

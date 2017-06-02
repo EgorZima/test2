@@ -1,3 +1,4 @@
+<h1> {{title}} </h1>
 
 <div *ngIf="favorites">
     <div class="row">
@@ -5,19 +6,20 @@
             <div class="col-md-3">
                 <div class="film">
                     <img src="{{film.urlPoster}}" class="poster">
-                    
                     <div class="title"> <a href="{{film.urlIMDB}}"> {{film.title}}</a> </div>
                     <div> <strong> Year:</strong> {{film.year}} </div>
                     <div> <strong> Rating:</strong> {{film.rating}} </div>
                     <div> <strong> Gernres:</strong> {{film.genres}}</div>
-                    <div>                           
-                        <strong> Director:</strong> <a href="http://www.imdb.com/name/{{film.directors.id}}" class="director" > {{film.directors['0'].name}} </a> 
+                    <div> <strong> Contries:</strong> {{film.countries}} </div>
+                    <div>  <strong> Director:</strong> <a href="http://www.imdb.com/name/{{film.directors['0'].id}}" class="director" > {{film.directors['0'].name}} </a> </div>
+                    <div >
+                        <a href="#" class="trailer" (click)="openDialog(film, $event)"> <strong><i class="material-icons trailer-icon" title="watch trailer">local_movies</i></strong> </a>
                     </div>
-                    <div class="rank">
-                        <strong> Rank: </strong> {{film.ranking}}
-                    </div>
+                    <i class="material-icons delete-icon" (click)="deleteFilm(film)">delete</i>    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class FilmService {
     public currentFilm;
 
-    public getCurrentFilm(): Observable<Movie[]> {
+    public getCurrentFilm(): void {
         return this.currentFilm;
     }
 

@@ -1,0 +1,65 @@
+h1{
+    font-size: 50px;
+    color: #404040;
+    text-align: center;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 30px;
+    color: #404040;
+    text-align: center; 
+}
+
+.row .film {
+    background: #e8e8e8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    color: #404040;
+    font-family: Tahoma;
+    vertical-align: top;
+    height: 500px;
+    position: relative;
+    transition: 0.2s;
+}
+.row .film:hover {
+    background: #dbdbdb;
+    box-shadow: 0px 0px 8px 1px #c7c7c7;
+}
+.poster {
+    display: block;
+    margin: 0 auto
+}  
+.title {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    
+}
+.title a {
+    color: #404040;
+    transition: 0.2s;
+}
+
+.trailer-icon {
+    color: #404040;
+    position: absolute;
+    right: 34px;
+    bottom: 4px;
+    transition: 0.3s;
+}
+
+.delete-icon {
+    color: #404040;
+    position: absolute;
+    cursor: pointer;
+    right: 4px;
+    bottom: 4px;
+    transition: 0.3s;
+}
+
+ .trailer-icon:hover, .trailer-icon:hover, .favorited {
+    color: #d4b717;
+}
