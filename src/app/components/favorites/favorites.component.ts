@@ -14,7 +14,7 @@ export class FavoritesComponent {
   public topList = JSON.parse(localStorage.getItem('topList'));
 
   public constructor(private filmService: FilmService,
-                      private dialog: MdDialog) {}
+                     private dialog: MdDialog) {}
 
   public ngOnInit(): void {
       localStorage['favorites'] = [];

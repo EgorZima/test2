@@ -12,7 +12,7 @@ export class ModalWindowComponent {
              private filmService: FilmService,
              private sanitizer: DomSanitizer) {}
 
-  public film: any;
+  public film;
   ngOnInit() {
       this.film = this.filmService.getCurrentFilm();
   }
@@ -21,5 +21,4 @@ export class ModalWindowComponent {
       return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+this.film.youtubeID)  
   }
   
-    
 }

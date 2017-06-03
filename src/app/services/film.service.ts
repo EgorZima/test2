@@ -13,9 +13,7 @@ export class FilmService {
     public setCurrentFilm(film): void {
         this.currentFilm = film;
     }
-
-      
-      
-  }
+   
+}
 
 

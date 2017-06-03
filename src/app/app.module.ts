@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { ChartsModule } from 'ng2-charts';
 
-
 import { IMDBService } from './services/IMDB.service';
 import { FilmService } from './services/film.service';
 import { AppRoutingModule } from './app.routes';
