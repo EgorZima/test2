@@ -24,7 +24,7 @@ export class FavoritesComponent {
             this.favorites.push(top[i]);
           }    
       }
-      (this.favorites.length) ? (this.title = 'Your Favorites Films') : (this.title = 'There Are No Favorite Films Here')
+      (this.favorites) ? (this.title = 'Your Favorites Films') : (this.title = 'There Are No Favorite Films Here')
       localStorage['favorites'] = JSON.stringify(top);
   } 
 

@@ -19,9 +19,5 @@ export class IMDBService {
                   .map(res => res.json());
     }
 
-      
-
-      
-  }
-
+}
 
