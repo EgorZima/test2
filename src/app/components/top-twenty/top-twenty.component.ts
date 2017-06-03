@@ -28,7 +28,9 @@ export class TopTwentyComponent {
                   (res: any) => top[i].youtubeID = (res.items[0].id.videoId)  
                 )
                 top[i].favorite = false;
-                this.topList.push(top[i])
+                this.topList.push(top[i]);
+
+                top[i].decade = this.topList[i].year.split('').splice(2,1).join(''); 
               }
               localStorage['topList'] = JSON.stringify(top);
             }

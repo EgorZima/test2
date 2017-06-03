@@ -1,0 +1,62 @@
+.donut {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.decades-films {
+    width:400px;
+    height: 600px;
+    overflow: scroll;
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    background: #f3f3f3;
+    font-family: Tahoma;
+    overflow-x: hidden;
+}
+
+ .film {
+    display: block;
+    background: #ebebeb;
+    padding-top: 10px;
+    margin-left: 20px;
+    width:360px;
+    height: 320px;
+    margin-top: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    color: #404040;
+    font-family: Tahoma;
+    position: relative;
+    transition: 0.2s;
+}
+.film:hover {
+    background: #dbdbdb;
+    box-shadow: 0px 0px 8px 1px #c7c7c7;
+}
+.poster-div {
+    width: 140px;
+}
+.poster {
+    display: block;
+    margin: 0 auto;
+    width:120px;
+    height: 300px;
+} 
+.poster-div, .description{
+    padding-right: 10px;
+    padding-left: 10px;
+} 
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    
+}
+.title a {
+    color: #404040;
+    transition: 0.2s;
+}

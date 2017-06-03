@@ -5,6 +5,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
+import { ChartsModule } from 'ng2-charts';
+
 
 import { IMDBService } from './services/IMDB.service';
 import { FilmService } from './services/film.service';
@@ -34,6 +36,7 @@ import { TopTwentyComponent } from './components/top-twenty/top-twenty.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ChartsModule
   ],
   providers: [IMDBService, FilmService],
   bootstrap: [AppComponent],

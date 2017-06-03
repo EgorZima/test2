@@ -1,1 +1,28 @@
-this is decades
+<div class="donut" style="display: block">
+  <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered(data)"
+              (chartClick)="chartClicked($event)"></canvas>
+</div>
+
+<div *ngIf="currentFilms.length" class="decades-films">
+       <div  *ngFor="let film of currentFilms">
+        <div class="film">
+            <div class="col-md-6 poster-div">
+                <img src="{{film.urlPoster}}" class="poster">
+            </div>
+            <div class="col-md-6 description">
+                <div class="title"> <a href="{{film.urlIMDB}}"> {{film.title}}</a> </div>
+                <div> <strong> Year:</strong> {{film.year}} </div>
+                <div> <strong> Rating:</strong> {{film.rating}} </div>
+                <div> <strong> Gernres:</strong> {{film.genres}}</div>
+                <div> <strong> Contries:</strong> {{film.countries}} </div>
+                <div>                           
+                    <strong> Director:</strong> <a href="http://www.imdb.com/name/{{film.directors['0'].id}}" class="director" > {{film.directors['0'].name}} </a> 
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
